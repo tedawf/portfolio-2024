@@ -1,4 +1,5 @@
 ---
+import Footer from "@/components/Footer.astro";
 import Nav from "@/components/Nav.astro";
 import BaseHead from "./BaseHead.astro";
 
@@ -8,11 +9,12 @@ import "@/styles/global.css";
 <html lang="en">
   <BaseHead {...Astro.props} />
   <body
-    class="bg-bkg text-text ml-auto mr-auto grid min-h-screen max-w-[2000px] grid-rows-[auto_1fr_auto] leading-[1.4]"
+    class="mx-auto grid min-h-screen max-w-[2000px] grid-rows-[auto_1fr_auto] bg-bkg leading-[1.4] text-text"
   >
     <Nav />
-    <main class="gap-md mt-md grid">
+    <main class="mt-md grid gap-md">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,33 @@
+---
+import { socialData } from "@/data/siteData";
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="bg-base p-sm shadow-shadow">
+  <div class="mx-auto flex flex-wrap justify-between gap-sm">
+    <p class="max-w-[40ch] text-balance">
+      &copy;
+      <span id="copyright">{new Date().getFullYear()}</span>
+      Ang Wei Feng (Ted). All rights reserved. I'm an aspiring software engineer
+      that is passionate about learning all new technologies and also, learning just
+      to teach others.
+    </p>
+    <ul class="flex list-none flex-wrap items-center justify-center gap-sm">
+      {
+        socialData.map(({ title, href, icon }) => (
+          <li>
+            <a href={href} aria-label={title} title={title} class="block">
+              <Icon name={icon} size={24} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</footer>
+
+<!-- the above is on build, this is on website load -->
+<script>
+  const copyrightSpan = document.querySelector("#copyright") as HTMLSpanElement;
+  copyrightSpan.textContent = new Date().getFullYear().toString();
+</script>
