@@ -65,4 +65,22 @@
       color-scheme: dark light;
     }
   }
+  a,
+  button {
+    @apply rounded-sm;
+  }
+}
+
+@layer components {
+  .btn,
+  .badge {
+    --_local-bkg: var(--color-accent);
+    --_local-border: var(--color-accent);
+    --_local-color: var(--color-bkg);
+    @apply flex w-fit gap-xs rounded-full border-[0.2em] border-solid border-lborder bg-lbkg px-sm py-3xs text-md font-bold text-lcolor no-underline;
+  }
+  :is(.btn, .badge).secondary {
+    --_local-bkg: var(--color-bkg);
+    --_local-color: var(--color-accent);
+  }
 }
