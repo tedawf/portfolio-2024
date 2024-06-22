@@ -1,10 +1,21 @@
 ---
+// Astro
+import { Image } from "astro:assets";
+
+// components
 import Heading from "../ui/Heading.astro";
 import Link from "../ui/Link.astro";
+
+// assets
+import cat from "@/assets/cat.jpg";
 ---
 
-<div>
+<header aria-label="Introduction" class="hero-home">
+  <Image src={cat} alt="Luffy" width={200} format="avif" class="avatar" />
   <Heading tagName="h3" size="h2">👋 Hi, have you met Ted?</Heading>
-  <Link href="#" variant="secondary">Download CV</Link>
-  <Link href="#contact">Let's Connect</Link>
-</div>
+  <p>I am a fullstack developer obsessed with quality.</p>
+  <div>
+    <Link href="#" variant="secondary">Download CV</Link>
+    <Link href="#contact">Let's Connect</Link>
+  </div>
+</header>

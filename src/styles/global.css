@@ -83,4 +83,21 @@
     --_local-bkg: var(--color-bkg);
     --_local-color: var(--color-accent);
   }
+  .hero-home,
+  .hero-not-found {
+    @apply mx-auto grid place-items-center gap-sm self-start px-md py-xl text-center;
+  }
+  .hero-home p,
+  .hero-not-found p {
+    @apply max-w-[35ch];
+  }
+  :is(.hero-home, .hero-not-found) div {
+    @apply flex flex-wrap justify-center gap-sm;
+  }
+  .hero-not-found {
+    @apply max-w-[55ch];
+  }
+  .avatar {
+    @apply rounded-full border-8 border-solid border-accent;
+  }
 }
