@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+
+// components
+import Heading from "../ui/Heading.astro";
+import { Icon } from "astro-icon/components";
+
+const highlights = await getCollection("highlights");
+---
+
+<section aria-label="Highlights Banner" class="bg-accent">
+  <div class="mx-auto grid max-w-screen-xl gap-md self-start px-md py-xl text-center text-bkg">
+    <Heading tagName="h2" size="h2">
+      I build and deploy high quality software applications.
+    </Heading>
+    <ul class="flex flex-wrap justify-center gap-sm">
+      {
+        highlights.map(({ data }) => (
+          <li class="grid max-w-[30ch] place-items-center gap-sm text-center">
+            <Icon name={data.icon} size={64} />
+            <Heading tagName="h3" size="h3">
+              {data.title}
+            </Heading>
+            <p>{data.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
