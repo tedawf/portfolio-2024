@@ -69,6 +69,34 @@
   button {
     @apply rounded-sm;
   }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply max-w-[65ch] text-wrap;
+  }
+  ul[role="list"],
+  ol[role="list"] {
+    @apply list-none;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    @apply block max-w-full;
+  }
+  svg {
+    @apply pointer-events-none;
+  }
 }
 
 @layer components {
@@ -82,22 +110,5 @@
   :is(.btn, .badge).secondary {
     --_local-bkg: var(--color-bkg);
     --_local-color: var(--color-accent);
-  }
-  .hero-home,
-  .hero-not-found {
-    @apply mx-auto grid place-items-center gap-sm self-start px-md py-xl text-center;
-  }
-  .hero-home p,
-  .hero-not-found p {
-    @apply max-w-[35ch];
-  }
-  :is(.hero-home, .hero-not-found) div {
-    @apply flex flex-wrap justify-center gap-sm;
-  }
-  .hero-not-found {
-    @apply max-w-[55ch];
-  }
-  .avatar {
-    @apply rounded-full border-8 border-solid border-accent;
   }
 }
